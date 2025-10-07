@@ -8,7 +8,11 @@
 </head>
 <body>
     <style>
+        img{
 
+            width: 200px;
+            height: 200px;
+        }
         body {
             background-color: pink;
             font-family: "Lucida Console", "Courier New", monospace;
@@ -44,7 +48,23 @@
 
                 }
 
+            button{
+
+                padding: 25px;
+                font-size: 20px;
+                background-color: yellow;
+                border: none;
+                font-family: "Lucida Console", "Courier New", monospace;
+                border-radius: 25px;
+                
+
+            }
+
     </style>
+
+         
+
+
 <?php
 
 $aleatorio = rand(1 , 826);
@@ -85,6 +105,21 @@ if ($estado === "Alive") {
 <p> Especie: <?php echo $especie; ?></p>
 <br>
 <p> Estado: <?php echo $estado . " " . $estadoSi; ?></p>
+
+<button onclick="location.reload()">Reiniciar</button>
+</div>
+
+
+<div class="card2">
+
+<p> Detalles</p>
+
+<p> Ricks: </p>
+
+ <p>Kills: </p>
+
+ <p>Alive: </p>
+
 
 </div>
 
