@@ -1,0 +1,4 @@
+La temperatura media es: 19°C
+La temperatura minimo es: 14°C
+La temperatura maximo es: 25°C
+La temperatura mas de 20°C son: 25°C, 23°C

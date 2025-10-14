@@ -11,8 +11,8 @@ function sumar($a, $b){
 }
 
 //scanner is argv in php
-$a = $argv[1];
-$b = $argv[2];
+$a = $argv[2];
+$b = $argv[3];
 
 sumar($a , $b);
 ?>

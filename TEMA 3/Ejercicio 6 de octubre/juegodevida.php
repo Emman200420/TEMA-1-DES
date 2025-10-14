@@ -20,7 +20,9 @@ reglas:
 4. reproduccion: celda viva con exactamente
 3 vecinos => nace
 
+
 */
+
 
 
 

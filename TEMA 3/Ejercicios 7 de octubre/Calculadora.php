@@ -25,16 +25,16 @@ function factorial($a){
         return $a * factorial($a - 1); 
     }
     
-   
-
 }
-echo" la factorial seria " . factorial($a);
 
 
-$a = $argv[1];
-$b = $argv[2];
+
+$a = $argv[2];
+$b = $argv[3];
 
 sumar($a,$b);
 esPar($a);
-factorial($b);
+echo" la factorial seria " . factorial($a);
+
+
 ?>

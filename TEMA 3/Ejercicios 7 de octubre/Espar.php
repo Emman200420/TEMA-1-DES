@@ -8,7 +8,7 @@ function esPar($a){
     }return $a;
 }
 
-$a = $argv[1];
+$a = $argv[2];
 
 esPar($a);
 

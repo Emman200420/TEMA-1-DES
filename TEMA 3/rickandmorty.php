@@ -110,18 +110,7 @@ if ($estado === "Alive") {
 </div>
 
 
-<div class="card2">
 
-<p> Detalles</p>
-
-<p> Ricks: </p>
-
- <p>Kills: </p>
-
- <p>Alive: </p>
-
-
-</div>
 
 
 
