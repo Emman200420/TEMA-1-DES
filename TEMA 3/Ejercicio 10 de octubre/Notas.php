@@ -60,7 +60,3 @@ foreach($Array as $nombre => $notas){
 }
 
 ?>
-
-    
-
-?>

@@ -1,7 +1,7 @@
 <?php
 
 $filename = "temperaturas.txt";
-$temperaturas = [ 14, 17, 18, 20, 25, 23, 16];
+$temperaturas = [ "Lunes" => 14,"Martes" => 17,"Miercoles" => 18,"Jueves" => 20, "Viernes" => 25, "Sabado" => 23, "Domingo" => 16];
 
 function mediaTemperatura($temperaturas){
     
@@ -13,19 +13,39 @@ function mediaTemperatura($temperaturas){
 } 
 
 function temperaturaMinima($temperaturas){
-   return min($temperaturas);
+    $tempminimo = min($temperaturas);
+    $diasMinimos = [];
+    
+    foreach($temperaturas as $diasdesemana => $temperatura){
+        if ($temperatura == $tempminimo) {
+            $diasMinimos[] = $diasdesemana;
+        }
+    }
+    
+    return implode(", ", $diasMinimos) . " " . $tempminimo ;
 }
 
 function temperaturaMaxima($temperaturas){
-    return max($temperaturas);
+    
+    
+    $tempmaximo = max($temperaturas);
+    $diasMaximos = [];
+    
+    foreach($temperaturas as $diasdesemana => $temperatura){
+        if ($temperatura == $tempmaximo) {
+            $diasMaximos[] = $diasdesemana;
+        }
+    }
+    
+    return implode(", ", $diasMaximos) . " " . $tempmaximo ;
 }
 
 function temperaturasMas20 ($temperaturas){
      $tempCalurosas = [];
    
-    foreach($temperaturas as $temperatura) {
+    foreach($temperaturas as $diasdesemana => $temperatura ) {
         if ($temperatura > 20) {
-            $tempCalurosas[] = $temperatura . "°C";
+            $tempCalurosas[] = $diasdesemana ." ". $temperatura . "°C";
         }
     }
    
@@ -38,7 +58,7 @@ $minima =  temperaturaMinima($temperaturas);
 $maximo = temperaturaMaxima($temperaturas);
 $mas20 = temperaturasMas20($temperaturas);
 
-    $archivo = fopen($filename, "w");
+    $archivo = fopen($filename, "w+");
 
 $contenido =
 
