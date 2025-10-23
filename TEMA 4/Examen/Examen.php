@@ -4,13 +4,13 @@ class Examen{
     public $nombre;
     public $fecha;
     public $Npreguntas;
-    public $nombreAsignatura; // Corregido typo
+    public $nombreAsignatura; 
     public $nota = 0;
 
     public function __construct($nombre, $fecha, $Npreguntas, $nombreAsignatura){
         $this->nombre = $nombre;
         $this->Npreguntas = $Npreguntas;
-        $this->fecha = $fecha; // Sin espacio
+        $this->fecha = $fecha; 
         $this->nombreAsignatura = $nombreAsignatura;
     }
 
