@@ -1,0 +1,18 @@
+{
+    "name": "liedl/tema6pruebas",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Liedl\\Tema6pruebas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Emman",
+            "email": "jlr0020@alu.medac.es"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    }
+}

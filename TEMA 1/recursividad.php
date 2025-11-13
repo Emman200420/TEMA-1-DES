@@ -12,8 +12,11 @@ function Parafactorial($num){
 
     if($num == 1)
         return 1;
+    //Caso base 
     else 
         return $num * Parafactorial($num - 1);
+
+    //caso recursivo
 
 }
 echo "\n La factorial sera " . Parafactorial($num);
