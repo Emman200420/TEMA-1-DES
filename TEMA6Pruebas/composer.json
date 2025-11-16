@@ -1,18 +1,21 @@
 {
-    "name": "liedl/tema6pruebas",
+    "name": "liedl/tema6-pruebas",
+    "description": "Sistema de corrección de exámenes",
     "type": "project",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
     "autoload": {
         "psr-4": {
-            "Liedl\\Tema6pruebas\\": "src/"
+            "Liedl\\Tema6Pruebas\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Emman",
-            "email": "jlr0020@alu.medac.es"
+    "autoload-dev": {
+        "psr-4": {
+            "Liedl\\Tema6Pruebas\\Tests\\": "tests/"
         }
-    ],
-    "require-dev": {
-        "phpunit/phpunit": "^11.5"
     }
 }

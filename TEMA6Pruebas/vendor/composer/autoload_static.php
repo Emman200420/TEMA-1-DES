@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5a9aeff8500ccc6840c006555db40312
+class ComposerStaticInitb7f43c224805fb3389c2d5fefa4411a9
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -18,7 +18,8 @@ class ComposerStaticInit5a9aeff8500ccc6840c006555db40312
         ),
         'L' => 
         array (
-            'Liedl\\Tema6pruebas\\' => 19,
+            'Liedl\\Tema6Pruebas\\Tests\\' => 25,
+            'Liedl\\Tema6Pruebas\\' => 19,
         ),
         'D' => 
         array (
@@ -31,7 +32,11 @@ class ComposerStaticInit5a9aeff8500ccc6840c006555db40312
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'Liedl\\Tema6pruebas\\' => 
+        'Liedl\\Tema6Pruebas\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'Liedl\\Tema6Pruebas\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -1264,7 +1269,6 @@ class ComposerStaticInit5a9aeff8500ccc6840c006555db40312
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',
         'TheSeer\\Tokenizer\\Token' => __DIR__ . '/..' . '/theseer/tokenizer/src/Token.php',
         'TheSeer\\Tokenizer\\TokenCollection' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollection.php',
-        'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
         'staabm\\SideEffectsDetector\\SideEffect' => __DIR__ . '/..' . '/staabm/side-effects-detector/lib/SideEffect.php',
@@ -1274,9 +1278,9 @@ class ComposerStaticInit5a9aeff8500ccc6840c006555db40312
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5a9aeff8500ccc6840c006555db40312::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5a9aeff8500ccc6840c006555db40312::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit5a9aeff8500ccc6840c006555db40312::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb7f43c224805fb3389c2d5fefa4411a9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb7f43c224805fb3389c2d5fefa4411a9::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitb7f43c224805fb3389c2d5fefa4411a9::$classMap;
 
         }, null, ClassLoader::class);
     }
