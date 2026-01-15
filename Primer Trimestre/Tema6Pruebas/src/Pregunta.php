@@ -2,6 +2,13 @@
 namespace Liedl\Tema6Pruebas;
 class Pregunta
 {
+    /*
+     Las variables vamos a utilizar:
+     $id es el numero de pregunta.
+     $enunciado es el texto de la pregunta.
+     $preso es la puntos de la pregunta.
+       
+    */
     public $id;
     public $enunciado;
     public $peso;
@@ -13,10 +20,12 @@ class Pregunta
         $this->peso = $peso;
     }
 
-    // Añadir el método calcularPuntuacion en la clase base
+    /*
+     Aqui se calcula cuantos puntos que han dado por tu respuesta.
+     */
     public function calcularPuntuacion($respuestaAlumno)
     {
-        return 0; // Por defecto retorna 0
+        return 0;
     }
 }
 ?>

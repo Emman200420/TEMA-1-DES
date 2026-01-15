@@ -1,4 +1,5 @@
-<?php 
+<?php
+// Se prueban todas las funciones del corrector de exámenes.
 namespace Liedl\Tema6Pruebas\Tests;
 
 use PHPUnit\Framework\TestCase;
@@ -9,32 +10,33 @@ use Liedl\Tema6Pruebas\CorrectorExamen;
 
 class CorrectorExamenTest extends TestCase
 {
+    // Se prueba la corrección completa de un examen.
     public function testCorreccionExamenCompleto()
     {
-        // Crear examen
+        // Se crea un examen nuevo.
         $examen = new Examen();
         
-        // Q1 (Test)
+        // Se añade pregunta 1 de test.
         $examen->agregarPregunta(new PreguntaTest(
             "Q1", 
-            "¿Cuál es la capital de Francia?", 
+            "¿Cuál es la capital de Japon?", 
             2.0, 
             4, 
-            2, 
-            0.25
+            2,  // Se marca la opción C como correcta.
+            0.25 // Se quita 0.5 puntos si se falla.
         ));
         
-        // Q2 (Test)
+        // Se añade pregunta 2 de test.
         $examen->agregarPregunta(new PreguntaTest(
             "Q2", 
-            "¿2+2?", 
+            "¿100 - 43?", 
             3.0, 
             4, 
-            0, 
-            0.33
+            0,  // Se marca la opción A como correcta.
+            0.33 // Se quita 0.99 puntos si se falla.
         ));
         
-        // Q3 (Abierta)
+        // Se añade pregunta 3 abierta.
         $examen->agregarPregunta(new PreguntaAbierta(
             "Q3", 
             "Explique conceptos POO", 
@@ -42,30 +44,33 @@ class CorrectorExamenTest extends TestCase
             ["polimorfismo", "herencia", "encapsulamiento", "interfaces"]
         ));
 
-        // Respuestas del alumno
+        // Se simulan las respuestas de un alumno.
         $respuestas = [
-            "Q1" => 2, // Correcta: +2.0
-            "Q2" => 1, // Incorrecta: -0.99
-            "Q3" => "La programación orientada a objetos incluye herencia, polimorfismo y encapsulamiento" // 3/4 palabras
+            "Q1" => 2, // Se acierta la primera pregunta.
+            "Q2" => 1, // Se falla la segunda pregunta.
+            "Q3" => "La programación orientada a objetos incluye herencia, polimorfismo y encapsulamiento"
+            // Se usan 3 de las 4 palabras clave.
         ];
 
         $corrector = new CorrectorExamen();
         $resultado = $corrector->corregir($examen, $respuestas);
 
-        // Verificaciones
+        // Se verifican los resultados.
         $this->assertEquals(10.0, $resultado->puntosMaximos);
         
+        // Se comprueba el cálculo de puntos:
         // Q1: +2.0, Q2: -0.99, Q3: (3/4)*5 = 3.75 → Total: 2.0 - 0.99 + 3.75 = 4.76
         $this->assertEquals(4.76, $resultado->puntosObtenidos);
         $this->assertEquals(4.76, $resultado->notaSobre10);
-        $this->assertEquals("Suspenso",
-         $corrector->obtenerCalificacionCualitativa($resultado->notaSobre10));
+        $this->assertEquals("Suspenso", $corrector->obtenerCalificacionCualitativa($resultado->notaSobre10));
     }
 
+    // Se prueba el funcionamiento del redondeo.
     public function testRedondeo()
     {
         $corrector = new CorrectorExamen();
         
+        // Se verifica que redondee correctamente.
         $this->assertEquals(4.76, $corrector->redondear(4.756, 2));
         $this->assertEquals(4.75, $corrector->redondear(4.754, 2));
     }
